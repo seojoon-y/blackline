@@ -2,7 +2,7 @@
 # COCO8 dataset (first 8 images from COCO train2017) by Ultralytics
 # Documentation: https://docs.ultralytics.com/datasets/detect/coco8/
 
-path: ../Yolov8s/datasets/coco8 # dataset root dir
+path: /home/admin/blackline/datasets/coco8 # dataset root dir
 train: images/train # train images (relative to 'path') 4 images
 val: images/val # val images (relative to 'path') 4 images
 test: # test images (optional)

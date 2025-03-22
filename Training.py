@@ -1,19 +1,18 @@
 from ultralytics import YOLO
 import os
 import sys
-from Config import RUN_NAME
+from Config import RUN_NAME, PRETRAINED_YOLO_MODEL
 import shutil
+from Utils import download_file_if_not_exists
+
+download_file_if_not_exists(PRETRAINED_YOLO_MODEL, f"https://github.com/ultralytics/assets/releases/download/v8.2.0/{PRETRAINED_YOLO_MODEL}")
 
 if os.path.isdir(RUN_NAME):
     print(f"Trained model already exists. Deleting {RUN_NAME} ...")
     shutil.rmtree(RUN_NAME)
 
-# Download:
-# 1. https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8l.pt
-# 2. https://ultralytics.com/images/bus.jpg
-
 # Load a COCO-pretrained YOLOv8n model
-model = YOLO("yolov8s.pt")
+model = YOLO(PRETRAINED_YOLO_MODEL)
 
 # Display model information (optional)
 model.info()
