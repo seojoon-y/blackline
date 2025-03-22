@@ -2,7 +2,6 @@ import sys
 import os
 from ultralytics import YOLO
 from Config import RUN_NAME
-from Utils import download_file_if_not_exists
 
 if os.path.isdir(RUN_NAME) == False:
     print(f"Please train model first.")

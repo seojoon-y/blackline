@@ -3,7 +3,14 @@ import os
 import sys
 from Config import RUN_NAME, PRETRAINED_YOLO_MODEL
 import shutil
-from Utils import download_file_if_not_exists
+import requests
+
+def download_file_if_not_exists(local_path, remote_url):
+    if os.path.exists(local_path):
+        return
+    r = requests.get(remote_url)
+    with open(local_path, "wb") as f:
+        f.write(r.content)
 
 download_file_if_not_exists(PRETRAINED_YOLO_MODEL, f"https://github.com/ultralytics/assets/releases/download/v8.2.0/{PRETRAINED_YOLO_MODEL}")
 
