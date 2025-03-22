@@ -18,4 +18,4 @@ model = YOLO(PRETRAINED_YOLO_MODEL)
 model.info()
 
 # Train the model on the COCO8 example dataset for 100 epochs
-results = model.train(data="coco8.yaml", epochs=5, imgsz=640, project=".", name=RUN_NAME)
+results = model.train(data="datasets/samples/data.yaml", epochs=100, imgsz=640, project=".", name=RUN_NAME)

@@ -1,7 +1,7 @@
 import sys
 import os
 from ultralytics import YOLO
-from Config import RUN_NAME, BUS_IMAGE_PATH
+from Config import RUN_NAME
 from Utils import download_file_if_not_exists
 
 if os.path.isdir(RUN_NAME) == False:
@@ -11,11 +11,9 @@ if os.path.isdir(RUN_NAME) == False:
 # Load model
 model = YOLO(f"{RUN_NAME}/weights/best.pt")
 
-# Download bus image
-download_file_if_not_exists(BUS_IMAGE_PATH, f"https://ultralytics.com/images/{BUS_IMAGE_PATH}")
-
-# Run inference with the YOLOv8n model on the 'bus.jpg' image
-results = model(BUS_IMAGE_PATH)
+# Run inference with the YOLOv8n model on the test image
+test_image_path = "test_input.jpg"
+results = model(test_image_path)
 if len(results) != 1:
     print("Error: Expected 1 results.")
     sys.exit()
@@ -27,4 +25,4 @@ keypoints = result.keypoints  # Keypoints object for pose outputs
 probs = result.probs  # Probs object for classification outputs
 obb = result.obb  # Oriented boxes object for OBB outputs
 # result.show()  # display to screen
-result.save(filename="result.jpg")  # save to disk
+result.save(filename=f"test_output.jpg")  # save to disk

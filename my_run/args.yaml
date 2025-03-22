@@ -1,7 +1,7 @@
 task: detect
 mode: train
 model: yolov8s.pt
-data: coco8.yaml
+data: datasets/samples/data.yaml
 epochs: 5
 time: null
 patience: 100

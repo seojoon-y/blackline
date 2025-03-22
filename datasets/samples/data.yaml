@@ -1,0 +1,14 @@
+train: train/images
+val: valid/images
+test: test/images
+path: /home/admin/blackline/datasets/samples
+
+nc: 1
+names: ['blackline']
+
+roboflow:
+  workspace: yolo-lqaso
+  project: my-first-project-ja1sp
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/yolo-lqaso/my-first-project-ja1sp/dataset/3
