@@ -1,18 +1,19 @@
 import sys
 import os
 from ultralytics import YOLO
-from Config import RUN_NAME
 
-if os.path.isdir(RUN_NAME) == False:
+INPUT_PATH = "test_input.jpg"
+OUTPUT_PATH = "test_output.jpg"
+
+if os.path.isdir("run") == False:
     print(f"Please train model first.")
     sys.exit()
 
 # Load model
-model = YOLO(f"{RUN_NAME}/weights/best.pt")
+model = YOLO("run/weights/best.pt")
 
-# Run inference with the YOLOv8n model on the test image
-test_image_path = "test_input.jpg"
-results = model(test_image_path)
+# Run inference with the YOLOv8 model on the test image
+results = model(INPUT_PATH)
 if len(results) != 1:
     print("Error: Expected 1 results.")
     sys.exit()
@@ -24,4 +25,5 @@ keypoints = result.keypoints  # Keypoints object for pose outputs
 probs = result.probs  # Probs object for classification outputs
 obb = result.obb  # Oriented boxes object for OBB outputs
 # result.show()  # display to screen
-result.save(filename=f"test_output.jpg")  # save to disk
+result.save(filename=OUTPUT_PATH)  # save to disk
+print(f"Image has been saved to {OUTPUT_PATH}")

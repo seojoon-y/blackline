@@ -3,6 +3,9 @@ import numpy as np
 from yolox.exp import get_exp
 from yolox.utils import get_model
 
+# Jason 2025 Mar 23:
+# The detect_black_lines_realtime_yolox function is not yet implemented. 
+
 def detect_black_lines_realtime_yolox():
   #Load model YOLOX 
   exp = get_exp(None, "yolox-s")

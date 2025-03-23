@@ -7,7 +7,7 @@ Basic Requirement for development and procedure for dependency installation:
    - Install Ultralytics YOLO: `pip install ultralytics`
 
 ## 2. Train YOLO model
-**Important**: If `my_run/weights/best.pt` exists, then you can proceed directly to step 3.
+**Important**: If `run/weights/best.pt` exists, then you can proceed directly to step 3.
 
 ### 2.1 Label images
 roboflow yolov8
