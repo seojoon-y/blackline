@@ -4,7 +4,8 @@ from yolox.exp import get_exp
 from yolox.utils import get_model
 
 # Jason 2025 Mar 23:
-# The detect_black_lines_realtime_yolox function is not yet implemented. 
+# This file is still a work-in-progress.
+# Please look at Inference.py and Training.py
 
 def detect_black_lines_realtime_yolox():
   #Load model YOLOX 

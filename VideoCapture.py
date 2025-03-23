@@ -1,15 +1,8 @@
-from ultralytics import YOLO
-# Load a model (YOLOv8s, for instance)
-model = YOLO('yolov8s.pt')  # Able to change to other versions like 'yolov8m', 'yolov8l', etc.
-# Train the model
-model.train(data='path_to_data.yaml', epochs=50, imgsz=640)
-
-
 import cv2
 from ultralytics import YOLO
 
 # Load trained model
-model = YOLO('path_to_your_trained_model.pt')
+model = YOLO("run/weights/best.pt")
 
 # Open a video capture
 cap = cv2.VideoCapture(0)  # 0 for webcam
